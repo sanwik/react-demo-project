@@ -1,21 +1,59 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* RESET DONE */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  background-color:#282c34;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,12 +65,103 @@
 .App-link {
   color: #61dafb;
 }
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-size: 28px;
+  color:#FBFCFE;
+  font-family: 'Rubik', sans-serif;
+  padding-bottom:10px;
+}
+
+h2 {
+  font-size: 22px;
+  color:#F8C49F;
+  font-family: 'Rubik', sans-serif;
+  padding-bottom:10px;
+}
+
+p {
+	color:#282c34;
+	font-family: 'Rubik', sans-serif;
+	line-height:20px;
+}
+
+.item-a {
+  grid-area: one;
+  background-color:#024249;
+  color:#FBFCFE;
+}
+
+.item-a p {
+	color:#FBFCFE;
+	font-size:14px;
+}
+.item-b {
+  grid-area: two;
+  background-color:#fa744f;
+  background-image: url(sunset-car.jpg);
+  background-size: cover;
+  background-position:center;
+  color:#282c34;
+}
+
+.item-b p { /* the date */
+	line-height:17px;
+	margin-left:2px;
+}
+.item-c {
+  grid-area: three;
+  background-color:#f79071;
+}
+.item-d {
+  grid-area: four;
+  background-color:#FBFCFE;
+  background-image: url(white-cup.jpg);
+  background-size: cover;
+  background-position:left;
+}
+
+.item-d h1 {
+	color:#282c34;
+}
+
+.item-d label {
+	font-family: 'Rubik', sans-serif;
+	color:#282c34;
+}
+
+.item-a, .item-b, .item-c, .item-d {
+  font-family:sans-serif;
+  border-radius: 20px;
+  text-align: left;
+  padding:50px;
+
+}
+
+.container {
+  height:600px;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-rows: auto;
+  gap: 3em;
+  padding: 0 60px 60px 60px;
+  grid-template-areas:
+    "two three three three"
+    "two one four four"
+}
+
+.todo-status {
+	padding-top: 10px;
+	font-size:12px;
+}
+
+input[type=checkbox] {
+	transition-duration: 0.5s;
+	margin-right:5px;
+}
+
+.message {
+	padding-top:10px;
+	color:#DB7E55;
 }
